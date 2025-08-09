@@ -210,3 +210,62 @@
 </body>
 </html>
  -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Message</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#3b82f6;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .card{background:var(--card);max-width:720px;width:100%;padding:36px;border-radius:14px;box-shadow:0 10px 30px rgba(16,24,40,0.08);text-align:center}
+    h1{margin:0 0 8px;font-size:20px;color:#111827}
+    p.message{font-size:18px;line-height:1.5;color:#0f172a;margin:18px 0;padding:0 8px}
+    p.note{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px;justify-content:center}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+    button.secondary{background:transparent;color:var(--accent);border:2px solid rgba(59,130,246,0.16)}
+    .small{font-size:13px;padding:8px 10px;border-radius:8px}
+    @media (max-width:480px){.card{padding:24px}p.message{font-size:16px}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Something I want to say</h1>
+    <p class="message" id="msg">I didn't mean to hurt you, and I asked, "Can't we just be good friends?"</p>
+    <p class="note">Use this page to share the message or copy it to your clipboard.</p>
+
+    <div class="actions">
+      <button onclick="copyText()" class="small">Copy message</button>
+      <button onclick="downloadHTML()" class="small secondary">Download HTML</button>
+    </div>
+  </main>
+
+  <script>
+    function copyText(){
+      const text = document.getElementById('msg').innerText;
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Message copied to clipboard');
+      }, ()=>{
+        alert('Could not copy — please select and copy manually.');
+      });
+    }
+
+    function downloadHTML(){
+      const html = `<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>Message</title>\n</head>\n<body>\n<p>I didn't mean to hurt you, and I asked, "Can't we just be good friends?"</p>\n</body>\n</html>`;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'message.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
