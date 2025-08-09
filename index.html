@@ -238,34 +238,9 @@
     <p class="message" id="msg">I didn't mean to hurt you, and I asked, "Can't we just be good friends?"</p>
     <p class="note">Use this page to share the message or copy it to your clipboard.</p>
 
-    <div class="actions">
-      <button onclick="copyText()" class="small">Copy message</button>
-      <button onclick="downloadHTML()" class="small secondary">Download HTML</button>
-    </div>
+  
   </main>
 
-  <script>
-    function copyText(){
-      const text = document.getElementById('msg').innerText;
-      navigator.clipboard.writeText(text).then(()=>{
-        alert('Message copied to clipboard');
-      }, ()=>{
-        alert('Could not copy — please select and copy manually.');
-      });
-    }
 
-    function downloadHTML(){
-      const html = `<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>Message</title>\n</head>\n<body>\n<p>I didn't mean to hurt you, and I asked, "Can't we just be good friends?"</p>\n</body>\n</html>`;
-      const blob = new Blob([html], {type: 'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'message.html';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-  </script>
 </body>
 </html>
