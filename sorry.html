@@ -1,1 +1,467 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Truly Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e0f7ff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #e91e63;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #444;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px rgba(233,30,99,0.07);
+      padding: 28px 10px 18px 10px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.2s;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-heart {
+      font-size: 2.2em;
+      color: #e91e63;
+      animation: pulse-heart 1.5s infinite;
+      margin-bottom: 4px;
+    }
+    @keyframes pulse-heart {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+      100% { transform: scale(1); }
+    }
+    .footer-quote {
+      color: #e91e63;
+      font-size: 1.05em;
+      font-family: 'Playfair Display', serif;
+      opacity: 0.85;
+      margin-top: 6px;
+      display: block;
+    }
+    .footer-name {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: #e91e63;
+      font-weight: bold;
+      margin: 10px 0 0 0;
+      letter-spacing: 1.5px;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      border-radius: 12px;
+      padding: 6px 24px;
+      box-shadow: 0 2px 8px #e91e6322;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .footer-name i {
+      color: #2196f3;
+      margin-right: 8px;
+      font-size: 1em;
+      vertical-align: middle;
+    }
+    .footer-name:hover {
+      background: linear-gradient(90deg, #e0f7ff 0%, #ffe6f0 100%);
+      color: #2196f3;
+      box-shadow: 0 4px 18px #2196f344;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .amir-bg-animated {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 9vw;
+      font-weight: 900;
+      color: #e91e63;
+      opacity: 0.13;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      text-shadow:
+        0 4px 32px #e91e63cc,
+        0 2px 8px #2196f355;
+      animation: amir-bg-move 7s ease-in-out infinite alternate;
+      filter: blur(0.5px);
+      z-index: 0;
+    }
+    @keyframes amir-bg-move {
+      0% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+      50% { letter-spacing: 0.32em; filter: blur(1.5px); opacity: 0.19; }
+      100% { letter-spacing: 0.18em; filter: blur(0.5px); opacity: 0.13; }
+    }
+
+    .info-block {
+      background: rgba(255,255,255,0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(233,30,99,0.08), 0 1.5px 6px rgba(33,150,243,0.07);
+      margin: 22px 0;
+      padding: 22px 28px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      border-left: 6px solid #e91e63;
+    }
+    .info-block:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(233,30,99,0.13), 0 3px 12px rgba(33,150,243,0.10);
+      background: linear-gradient(90deg, #fff 80%, #ffe6f0 100%);
+    }
+
+    .special-heading {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffe6f0 0%, #e0f7ff 100%);
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      font-weight: 700;
+      padding: 12px 32px;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px #e91e6333;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-align: center;
+      position: relative;
+      animation: gradient-move 3s linear infinite;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .special-heading i {
+      color: #ffc107;
+      margin: 0 8px;
+      font-size: 1.1em;
+      vertical-align: middle;
+    }
+    .special-heading:hover {
+      box-shadow: 0 8px 32px #e91e6380;
+      transform: scale(1.04) rotate(-1deg);
+    }
+    .special-heading i.fa-star {
+      font-size: 0.8em !important;
+      margin: 0 4px !important;
+    }
+
+    .romantic-quote {
+      margin: 38px 0 10px 0;
+      text-align: center;
+      font-size: 1.15em;
+      color: #e91e63;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Hearts Background Animation */
+    .hearts-bg {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .heart-anim {
+      position: absolute;
+      color: #e573a6;
+      opacity: 0.13;
+      font-size: 1.1em;
+      animation: heart-float 7s cubic-bezier(.4,0,.2,1) forwards;
+      will-change: transform, opacity;
+      filter: blur(0.2px) drop-shadow(0 2px 6px #e91e6380);
+      pointer-events: none;
+    }
+    @keyframes heart-float {
+      0% {
+        transform: translateY(100vh) scale(0.7) rotate(-10deg);
+        opacity: 0.13;
+      }
+      60% {
+        opacity: 0.22;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.05) rotate(12deg);
+        opacity: 0;
+      }
+    }
+
+    /* Custom Heart Cursor */
+    .custom-cursor {
+      position: fixed;
+      left: 0; top: 0;
+      width: 32px; height: 32px;
+      pointer-events: none;
+      z-index: 3000;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s cubic-bezier(.4,0,.2,1);
+      font-size: 2em;
+      user-select: none;
+      filter: drop-shadow(0 2px 6px #e91e6380);
+    }
+    @media (pointer: coarse), (max-width: 800px) {
+      .custom-cursor {
+        display: none !important;
+      }
+      body {
+        cursor: auto !important;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .container {
+        max-width: 98vw;
+        padding: 18px 2vw;
+        margin: 18px 0;
+        border-radius: 12px;
+      }
+      .info-block {
+        padding: 16px 10px !important;
+        font-size: 1em !important;
+      }
+      .special-heading {
+        font-size: 1.2em;
+        padding: 10px 10px;
+      }
+      .footer {
+        padding: 18px 4vw 12px 4vw;
+        font-size: 1em;
+        border-radius: 12px;
+      }
+      .footer-name {
+        font-size: 1.2em;
+        padding: 5px 14px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px 2vw;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+      .info-block {
+        padding: 10px 4vw !important;
+        margin: 12px 0 !important;
+        font-size: 0.98em !important;
+      }
+      .special-heading {
+        font-size: 1em;
+        padding: 8px 4vw;
+        border-radius: 12px;
+        margin-bottom: 6px;
+      }
+      .footer {
+        padding: 12px 2vw 8px 2vw;
+        font-size: 0.98em;
+        border-radius: 8px;
+      }
+      .footer-name {
+        font-size: 1em;
+        padding: 4px 10px;
+        border-radius: 10px;
+      }
+      .footer-heart {
+        font-size: 1.3em;
+      }
+      .footer-quote {
+        font-size: 0.95em;
+      }
+    }
+    @media (max-width: 400px) {
+      .container {
+        padding: 4px 1vw;
+      }
+      .info-block {
+        padding: 6px 2vw !important;
+        font-size: 0.95em !important;
+      }
+      .special-heading {
+        font-size: 0.95em;
+        padding: 6px 2vw;
+      }
+      .footer {
+        padding: 8px 1vw 6px 1vw;
+        font-size: 0.95em;
+      }
+      .footer-name {
+        font-size: 0.95em;
+        padding: 3px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated "Amir" background text -->
+  <div class="amir-bg-animated">Amir</div>
+  <!-- Hearts Animation Background (always behind content) -->
+  <div class="hearts-bg"></div>
+
+  <div class="container animate__animated animate__fadeInUp">
+    <!-- Apology Section (now inside container for proper alignment) -->
+    <div class="info-block apology-block animate__animated animate__fadeInDown" style="border-left:6px solid #2196f3; background:rgba(224,247,255,0.97); margin-bottom: 18px;">
+      <h1 class="special-heading" style="color:#2196f3;">
+        <i class="fas fa-heart-broken"></i>
+        I'm Truly Sorry
+        <i class="fas fa-heart-broken"></i>
+      </h1>
+      <p>
+        I sincerely apologize if my words or proposal hurt you in any way. That was never my intention. Your feelings and respect mean a lot to me.
+      </p>
+      <p>
+        I value our connection and would be grateful if we could remain good friends. I hope we can keep our friendship light and positive, without any awkwardness or pressure.
+      </p>
+      <p style="color:#888;font-style:italic;">
+        Your happiness and friendship are truly precious to me.
+      </p>
+    </div>
+
+    <div class="info-block animate__animated animate__fadeInLeft">
+      <h1 class="special-heading">
+        <i class="fas fa-star"></i>
+        A Special Message
+        <i class="fas fa-star"></i>
+      </h1>
+      <p>Dear <span class="highlight">Respected Friend</span>,</p>
+      <p>
+        I hope you are doing well and that your days are filled with joy and creativity.
+      </p>
+    </div>
+
+    <div class="romantic-quote">
+      <i class="fas fa-heart" style="color:#e91e63;"></i>
+      <span>
+        "Every moment with you is a beautiful memory in the making."
+      </span>
+    </div>
+
+    <!-- Friendship Closing Note -->
+    <div class="info-block animate__animated animate__fadeInUp" style="border-left:6px solid #2196f3; background:rgba(224,247,255,0.97); margin-top: 18px;">
+      <p>
+        I truly hope you can forgive me. Friendship is one of the most beautiful bonds, and I wish for us to always respect and support each other as good friends.
+      </p>
+      <p style="color:#888;font-style:italic;">
+        Your smile and friendship mean the world to me.
+      </p>
+    </div>
+
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="footer-heart">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="footer-text">
+          <span style="font-size:1.1em;color:#e91e63;font-family:'Playfair Display',serif;">
+            With kindness and respect,
+          </span>
+          <br/>
+          <span class="footer-name">
+            <i class="fas fa-feather-alt"></i>
+            Amir Majeed
+          </span>
+          <br/>
+          <span class="footer-quote">
+            “May our friendship always bring happiness and peace.”
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Heart Cursor -->
+  <div class="custom-cursor" id="customCursor">💖</div>
+
+  <script>
+    // Custom Heart Cursor
+    const cursor = document.getElementById('customCursor');
+    document.body.style.cursor = 'none';
+    window.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Animated floating hearts background (only ❤️, small, subtle, random)
+    function spawnHearts() {
+      const heartsBg = document.querySelector('.hearts-bg');
+      if (!heartsBg) return;
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('span');
+          heart.className = 'heart-anim';
+          heart.innerText = '❤';
+          // Random left position and random animation duration
+          heart.style.left = Math.random() * 98 + 'vw';
+          heart.style.fontSize = (0.8 + Math.random() * 0.7) + 'em';
+          heart.style.animationDuration = (6 + Math.random() * 2.5) + 's';
+          heart.style.opacity = (0.10 + Math.random() * 0.13).toFixed(2);
+          heartsBg.appendChild(heart);
+          setTimeout(() => heart.remove(), 9000);
+        }, i * 350);
+      }
+    }
+    setInterval(spawnHearts, 3500);
+    spawnHearts();
+  </script>
+</body>
+</html>
